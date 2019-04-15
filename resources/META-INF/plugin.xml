@@ -1,0 +1,47 @@
+<idea-plugin>
+    <id>com.raindrop</id>
+    <name>Word Spell Checking</name>
+    <version>1.0</version>
+    <vendor email="727474430@qq.com">Raindrop</vendor>
+
+    <description><![CDATA[
+        <h1>Word Spell Checking</h1>
+        <br/>
+        <p><b><a href="https://github.com/727474430/SpellChecking">GitHub repository</a></b></p>
+        <br/>
+        <p><b><a href="https://github.com/727474430/SpellChecking/issues">Issue tracker</a></b></p>
+        <br/>
+        <p><b>A simple word spell check plugin, When you forget the correct spelling of the word.</b></p>
+        <p><b>use alt + c + w to start the check, get the correct word list, and replace it.</b></p>
+        <p><b>with the corresponding sequence number.</b></p>
+        <br>
+        <p><b>Note: Currently only supports single word spell checking.</b></p>
+        <br>
+        <em>Default shortcuts: Shift + C SpellChecking</em><br>
+    ]]></description>
+
+    <change-notes><![CDATA[
+        <ul>
+            <li>v1.0 Release</li>
+        </ul>
+    ]]></change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
+
+    <extensions defaultExtensionNs="com.intellij">
+    </extensions>
+
+    <actions>
+        <!-- ListPopGroup -->
+        <group id="Sample_JBPopupActionGroup"/>
+        <!-- SpellCheckingAction -->
+        <action id="IdeaSpellChecking.SpellCheckingAction" class="com.raindrop.api.SpellCheckingAction"
+                text="SpellChecking"
+                description="Idea word spell checking plugin">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt C" second-keystroke="W"/>
+        </action>
+    </actions>
+
+</idea-plugin>
